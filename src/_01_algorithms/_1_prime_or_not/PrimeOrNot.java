@@ -10,18 +10,26 @@ public class PrimeOrNot
 		boolean isPrime = true;
 		String input = JOptionPane.showInputDialog("Enter a number");
 		int num = Integer.parseInt(input);
-		for(int i = 2; i * i <= num; i++) 
+		if (num <= 1)
+			isPrime = false;
+		
+		else 
 		{
-	        if (i % num == 0) 
+			for(int i = 2; i < num; i++) 
+			{
+			
+			
+	        if (num % i == 0) 
 	            isPrime = false;
 	        
+			}
 		}
 	        if (isPrime == true)
 	        	System.out.println("That is a prime number!");
 	        else
 	        	System.out.println("That is NOT a prime number!");
 	       
-	        
+		
 	    
 
 	}
