@@ -14,8 +14,39 @@ public class Calculator {
 				JOptionPane.INFORMATION_MESSAGE, null, new String[] { "divide", "multiply", "subtract", "add" }, null);
 
 		// 3) Call the correct method depending on what option the user chooses
-		
+		if(task == 0)
+			result(divide(number1,number2));
+		if(task == 1)
+			result(multiply(number1,number2));
+		if(task == 2)
+result(subtract(number1,number2));
+		if(task == 3)
+			result(add(number1,number2));
 		// 4) Call the result() method and put the answer in a pop-up
+	}
+	public static double divide(int one,int two)
+	{
+		
+		return (one/two);
+	}
+	public static int multiply(int one,int two)
+	{
+		
+		return (one*two);
+	}
+	public static int subtract(int one,int two)
+	{
+		
+		return (one-two);
+	}
+	public static int add(int one,int two)
+	{
+		
+		return (one+two);
+	}
+	public static void result(double num)
+	{
+		System.out.println("Your answer is " + num);
 	}
 	
 	// 1) Make 4 static methods (add, subtract, multiply, divide)

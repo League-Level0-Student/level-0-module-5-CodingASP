@@ -24,6 +24,7 @@ public class IntroToMethods {
 	 * LOOK AT THE CODE BELOW
 	 * FIGURE OUT THE 3 PARTS TO EACH METHOD
 	 */
+	//truyn
 	public static void main(String[] args) {
 		// Method1
 		method1();
