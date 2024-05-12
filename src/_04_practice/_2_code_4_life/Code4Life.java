@@ -6,8 +6,9 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.JOptionPane;
 
-public class Code4Life {
+public class Code4Life {888
 	/***********  SOUND ***************
 	 * Some computers are unable to play sounds. 
 	 * If you cannot play sound on this computer, set canPlaySounds to false.
@@ -15,15 +16,20 @@ public class Code4Life {
 	 * *****************/
 	static boolean canPlaySounds = true;
 	
-	
+	public static void main(String [] args) {
 	// 1. Ask the user how many hours they spent coding this week.
-
-	// 2. If it is less than or equal to 2, tell them to stop watching YouTube and
-	// write code instead.
-
-	// 3. If it is greater than or equal to 3 AND less than or equal to 5, tell them
-	// they're a Code Ninja
-
+	String strInput = JOptionPane.showInputDialog(null, "How many hours have you coded this week?");
+	int input = Integer.parseInt(strInput);
+	if(input <= 2)
+		JOptionPane.showMessageDialog(null, "Stop watching youtube and write code instead.");
+	else if(input >= 3 && input <=5)
+		JOptionPane.showMessageDialog(null, "You are a code ninja.");
+	else
+		{
+		playBatmanTheme();
+		displayBatman();
+		}
+	}
 	// 4. If it is more than 5, call the playBatmanTheme  method, then 
 	//    call the displayBatman method.
 

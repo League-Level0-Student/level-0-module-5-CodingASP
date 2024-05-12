@@ -8,22 +8,65 @@ public class HappyPet {
 	static int happinessLevel = 0;
 	public static void main(String[] args) {
 		// 2. Ask the user what kind of pet they want to buy, and store their answer in a variable
-		String pet = JOptionPane.showInputDialog("What kind of pet do you want to buy? We sell dogs, cats, and fish:");
+	
 		// 3. REPEAT steps 4 - 7 enough times to make your pet happy!
-		
+		String pet = JOptionPane.showInputDialog("What kind of pet do you want to buy? A cat or dog:");
+		while(happinessLevel < 5)
+		{
 			// 4. Use showOptionDialog to ask the user what they want to do to make their pet happy
 			//    (eg: cuddle, food, water, take a walk, groom, clean up poop).
 			//    Make sure to customize the title and question too.
-			int task = JOptionPane.showOptionDialog(null, "Question", "Title", 0, JOptionPane.INFORMATION_MESSAGE, null,
-					new String[] { "Button1", "Button2", "Button3" }, null);
-
+			int task = JOptionPane.showOptionDialog(null, "What do you want to do to make your pet happy?", "Pet Store", 0, JOptionPane.INFORMATION_MESSAGE, null,
+					new String[] { "cuddle", "feed it food", "take it on a walk" }, null);
+			if (task == 0)
+				cuddle(pet);
+			if (task == 1)
+				feed(pet);
+			else
+				walk(pet);
+			
+	
+		}
+		
 			// 6. Use user input to call the appropriate method created in step 5 below.
-
 			// 7. If you determine the happiness level is large enough, tell the
 			//    user that he loves his pet and use break; to exit for loop.
+		JOptionPane.showMessageDialog(null, "You love your pet");	
+	}
+	public static void cuddle(String pet) 
+	{
+		if (pet.toLowerCase().equals("cat"))
+		{
+			JOptionPane.showMessageDialog(null, "Your cat purrs");	
+		}
+		if (pet.toLowerCase().equals("dog"))
+			JOptionPane.showMessageDialog(null, "Your dog licks you");	
+		happinessLevel+=2;
+	}
+	public static void feed(String pet) 
+	{
+		if (pet.toLowerCase().equals("cat"))
+		{
+			JOptionPane.showMessageDialog(null, "Your cat quickly eats its food");	
+		}
+		if (pet.toLowerCase().equals("dog"))
+			JOptionPane.showMessageDialog(null, "Your dog eats some food");	
+		happinessLevel+=1;
 
 	}
+	public static void walk(String pet) 
+	{
+		if (pet.toLowerCase().equals("cat"))
+		{
+			JOptionPane.showMessageDialog(null, "Your cat does not like the idea of a walk and scratches your sofa");	
+			happinessLevel-=3;
 
+		}
+		if (pet.toLowerCase().equals("dog"))
+			JOptionPane.showMessageDialog(null, "Your dog is very excited for its walk and wags its tail");	
+		happinessLevel+=3;
+
+	}
 	// 5. Create methods to handle each of your user selections.
 	//    Each method should create a pop-up with the pet's response (eg. cat might purr when pet), 
 	//    and INCREMENT the pet's happiness Level.
